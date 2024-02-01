@@ -6,7 +6,7 @@ from api_library import get_static
 
 
 class BigMap:
-    options = ['map', 'sat', 'map,sat']
+    options = ['map', 'sat', 'sat,skl']
 
     def __init__(self):
         self.image = None
@@ -65,10 +65,6 @@ pygame.init()
 SIZE = WIDTH, HEIGHT = 650, 450
 screen = pygame.display.set_mode(SIZE)
 clock = pygame.time.Clock()
-
-all_sprites = pygame.sprite.Group()
-tiles_group = pygame.sprite.Group()
-player_group = pygame.sprite.Group()
 
 app = BigMap()
 
