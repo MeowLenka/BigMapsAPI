@@ -6,6 +6,9 @@ import pygame
 from api_library import get_static
 
 
+class Gui:
+    pass
+
 class BigMap:
     def __init__(self):
         self.image = None
