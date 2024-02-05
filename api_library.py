@@ -1,3 +1,5 @@
+import pprint
+
 import requests
 
 
@@ -29,6 +31,14 @@ def get_toponym(json_data):
 
 def get_toponym_coord(toponym):
     return list(map(float, toponym["Point"]["pos"].split(' ')))
+
+
+def get_toponym_address(toponym):
+    address = toponym["metaDataProperty"]["GeocoderMetaData"]["Address"]
+    try:
+        return address['formatted'], address['postal_code']
+    except KeyError:
+        return address['formatted'], None
 
 
 def get_spn(toponym):
